@@ -20,44 +20,99 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Projeto Animais"),
-        shadowColor: Colors.transparent,
-      ),
       extendBody: true,
-      body: Container(),
+      body: SafeArea(
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+          color: Colors.white,
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Petligit",
+                    style: TextStyle(
+                      fontSize: 25,
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: Colors.red,
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  const Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.search_rounded),
+                        labelText: 'Pesquisar',
+                        labelStyle: TextStyle(
+                          color: Color(0xff9F9F9F),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xffF6F6F6), width: 0.0),
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                        ),
+                        filled: true,
+                        fillColor: Color(0xffF6F6F6),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.red,
+                    ),
+                    width: 70,
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 10),
         child: DotNavigationBar(
+          enablePaddingAnimation: false,
           margin: const EdgeInsets.only(left: 10, right: 10),
           currentIndex: _SelectedTab.values.indexOf(_selectedTab),
           dotIndicatorColor: Colors.white,
-          unselectedItemColor: Colors.grey[300],
+          selectedItemColor: Colors.black,
+          backgroundColor: Colors.white,
+          unselectedItemColor: Colors.grey,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 8,
+              spreadRadius: 1,
+            ),
+          ],
           // enableFloatingNavBar: false,
           onTap: _handleIndexChanged,
           items: [
             /// Home
             DotNavigationBarItem(
               icon: const Icon(Icons.home),
-              selectedColor: const Color(0xff73544C),
             ),
 
             /// Likes
             DotNavigationBarItem(
-              icon: const Icon(Icons.favorite),
-              selectedColor: const Color(0xff73544C),
+              icon: const Icon(Icons.calendar_month),
             ),
 
             /// Search
             DotNavigationBarItem(
-              icon: const Icon(Icons.search),
-              selectedColor: const Color(0xff73544C),
+              icon: const Icon(Icons.question_mark_rounded),
             ),
 
             /// Profile
             DotNavigationBarItem(
-              icon: const Icon(Icons.person),
-              selectedColor: const Color(0xff73544C),
+              icon: const Icon(Icons.question_answer_outlined),
             ),
           ],
         ),
