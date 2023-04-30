@@ -36,10 +36,10 @@ class CardAbrigo extends StatelessWidget {
       child: Row(children: [
         //Imagem
         Image.asset(
-          ImagensApp.background,
+          ImagensApp.iconePata,
           height: 100,
           width: 100,
-          color: Colors.red,
+          color: coresAplicativo.padraoApp,
         ),
         const SizedBox(
           width: 5,
