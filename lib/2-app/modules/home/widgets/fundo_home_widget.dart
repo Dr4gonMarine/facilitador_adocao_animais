@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import '../../../shared/uteis/imagensAplicativo.dart';
 
 class FundoHomeWidget extends StatelessWidget {
+  final String titulo;
   final List<Widget> conteudo;
-  const FundoHomeWidget({super.key, required this.conteudo});
+  const FundoHomeWidget({super.key, required this.conteudo, required this.titulo});
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +19,10 @@ class FundoHomeWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Expanded(
+                  Expanded(
                     child: Text(
-                      "Petligit",
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                      titulo,
+                      style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                   // Icon(
@@ -29,6 +30,7 @@ class FundoHomeWidget extends StatelessWidget {
                   //   size: 50,
                   //   color: Color(0xfffaaf8e),
                   // ),
+                  if (titulo == "PetLigit")
                   Container(
                     height: 50,
                     width: 50,
@@ -54,6 +56,7 @@ class FundoHomeWidget extends StatelessWidget {
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.all(0),
                         prefixIcon: Padding(
                           padding: const EdgeInsets.all(15),
                           child: Image.asset(
@@ -77,10 +80,12 @@ class FundoHomeWidget extends StatelessWidget {
                       ),
                     ),
                   ),
+                  if (titulo == "PetLigit")
                   const SizedBox(width: 5),
+                  if (titulo == "PetLigit")
                   Container(
-                    height: 50,
-                    width: 50,
+                      height: 45,
+                      width: 45,
                     decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                     child: Padding(
                       padding: const EdgeInsets.all(15),

@@ -16,4 +16,8 @@ class ImagensApp {
   static const String home = "$_path/Icon_Home.png";
   static const String mensagens = "$_path/Icon_Messages.png";
   static const String faq = "$_path/Icon_Faq.png";
+  static const String cachorro1 = "$_path/cachorro1.png";
+  static const String cachorro2 = "$_path/cachorro2.png";
+  static const String cachorro3 = "$_path/cachorro3.png";
+  static const String cachorro3Detalhe = "$_path/lindo-cao-labrador-deitado-na-grama-com-uma-bola-laranja-ao-por-do-sol.png";
 }

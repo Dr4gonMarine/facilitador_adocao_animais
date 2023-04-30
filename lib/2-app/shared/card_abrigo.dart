@@ -51,7 +51,7 @@ class CardAbrigo extends StatelessWidget {
                     maxLines: 2,
                   ),
                   const SizedBox(height: 5),
-                  TextWidget(endereco),
+                  Expanded(child: TextWidget(endereco)),
                   const SizedBox(height: 5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -64,9 +64,12 @@ class CardAbrigo extends StatelessWidget {
                       const SizedBox(width: 5),
                       TextWidget("•"),
                       const SizedBox(width: 5),
-                      TextWidget(
-                        "Abre seg. às 09:00",
-                        fontWeight: FontWeight.w500,
+                      Expanded(
+                        child: TextWidget(
+                          "Abre seg. às 09:00",
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                        ),
                       )
                     ],
                   )

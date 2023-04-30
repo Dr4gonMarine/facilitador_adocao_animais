@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:projeto/2-app/shared/uteis/coresAplicativo.dart';
 import 'package:projeto/2-app/shared/uteis/detalhe_Background.dart';
 import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
@@ -114,31 +112,80 @@ class DetalheAbrigoPage extends StatelessWidget {
         SizedBox(
           height: 2 * h,
         ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            IntrinsicHeight(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xffF2855C),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                child: Center(
+                  child: TextWidget(
+                    "Cachorros (3)",
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 2 * w,
+            ),
+            IntrinsicHeight(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                child: Center(
+                  child: TextWidget(
+                    "Gatos (2)",
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0xff292D32),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 2 * h,
+        ),
         CardPet(
-          nome: 'Bartolomel',
-          raca: 'Chiuaua',
+          nome: 'Bartolomeu',
+          raca: 'Golden Retriever',
           idade: 2,
-          porte: 'Pequeno',
+          porte: 'Grande',
           sexo: 'Macho',
           status: 'Disponível',
-          imagem: ImagensApp.imagemCard1,
+          imagem: ImagensApp.cachorro3,
         ),
         CardPet(
             nome: 'Gaia',
             raca: 'Shih Tzu',
-            idade: 2,
+            idade: 1,
             porte: 'Pequeno',
             sexo: 'Fêmea',
             status: 'Reservado',
-            imagem: ImagensApp.imagemCard2),
+            imagem: ImagensApp.cachorro2),
         CardPet(
             nome: 'Princesa',
-            raca: 'Golden retriever',
+            raca: 'Vira-lata',
             idade: 2,
             porte: 'Grande',
             sexo: 'Femea',
             status: 'Adotada',
-            imagem: ImagensApp.imagemCard3),
+            imagem: ImagensApp.cachorro1),
+        SizedBox(
+          height: 2 * h,
+        ),
       ],
     );
   }

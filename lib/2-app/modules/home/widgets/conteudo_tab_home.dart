@@ -20,7 +20,11 @@ class ConteudoTabHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height / 100;
+    double w = MediaQuery.of(context).size.width / 100;
+    
     return FundoHomeWidget(
+      titulo: "PetLigit",
       conteudo: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -38,7 +42,7 @@ class ConteudoTabHome extends StatelessWidget {
                   child: Center(
                     child: TextWidget(
                       "Todos",
-                      fontSize: 15,
+                      fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
@@ -55,7 +59,7 @@ class ConteudoTabHome extends StatelessWidget {
                   child: Center(
                     child: TextWidget(
                       "Próximo a você",
-                      fontSize: 15,
+                      fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: const Color(0xff292D32),
                     ),
@@ -71,7 +75,7 @@ class ConteudoTabHome extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                   child: Center(
                     child: TextWidget(
-                      fontSize: 15,
+                      fontSize: 12,
                       "Aberto agora",
                       fontWeight: FontWeight.w600,
                       color: const Color(0xff292D32),

@@ -39,7 +39,7 @@ class DetalheBackground extends StatelessWidget {
                 width: 100 * w,
                 margin: EdgeInsets.only(top: h * 22),
                 decoration: const BoxDecoration(
-                    color: Colors.white,
+                    color: Color(0xffF7F7F7),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(25),
                         topRight: Radius.circular(25))),

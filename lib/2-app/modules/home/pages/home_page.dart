@@ -1,6 +1,7 @@
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
+import '../widgets/conteudo_tab_chats.dart';
 import '../widgets/conteudo_tab_home.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     const ConteudoTabHome(),
     Container(color: Colors.green),
     Container(color: Colors.red),
-    Container(color: Colors.orange),
+    const ConteudoTabChats(),
   ];
 
 
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xffF7F7F7),
       extendBody: true,
       body: tabs[indexTab],
       bottomNavigationBar: Padding(
