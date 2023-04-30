@@ -1,6 +1,9 @@
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:projeto/1-base/behavior/my_scroll_behavior.dart';
 import 'package:projeto/2-app/modules/detalhe_abrigo_page/pages/detalhe_abrigo_page.dart';
+import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
 
 import '../../../shared/card_abrigo.dart';
 
@@ -23,75 +26,99 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       extendBody: true,
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           color: Colors.white,
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Petligit",
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      color: Colors.red,
-                    ),
-                  )
-                ],
-              ),
-              const SizedBox(height: 20),
-              Row(
-                children: [
-                  const Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.search_rounded),
-                        labelText: 'Pesquisar',
-                        labelStyle: TextStyle(
-                          color: Color(0xff9F9F9F),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Color(0xffF6F6F6), width: 0.0),
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                        ),
-                        filled: true,
-                        fillColor: Color(0xffF6F6F6),
+              Padding(
+                padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Expanded(
+                      child: Text(
+                        "Petligit",
+                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ),
-                  ),
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: const BoxDecoration(
-                      color: Colors.red,
+                    Icon(
+                      Icons.account_circle,
+                      size: 50,
+                      color: Color(0xffA5A5A5),
                     ),
-                  )
-                ],
+                  ],
+                ),
               ),
-              const SizedBox(
-                height: 20,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: Image.asset(
+                              ImagensApp.pesquisar,
+                              height: 1,
+                            ),
+                          ),
+                          labelText: 'Pesquisar',
+                          floatingLabelBehavior: FloatingLabelBehavior.never,
+                          labelStyle: const TextStyle(color: Color(0xff9F9F9F), fontWeight: FontWeight.w500),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffF6F6F6), width: 0.0),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xffF6F6F6), width: 0.0),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          filled: true,
+                          fillColor: const Color(0xffF6F6F6),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Container(
+                      height: 50,
+                      width: 50,
+                      decoration: const BoxDecoration(
+                        color: Color(0xffF6F6F8), shape: BoxShape.circle),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Image.asset(
+                          ImagensApp.filtro,
+                          height: 1,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-              InkWell(
-                onTap: () => {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DetalheAbrigoPage()),
-                  )
-                },
-                child: CardAbrigo(
-                  endereco: 'R. Paes Leme, 6-40',
-                  horarioFuncionamento: 'Abre seg. às 09:00',
-                  isAberto: true,
-                  titulo: 'Associação Regional Flor\n de Liz',
+              Expanded(
+                child: ScrollConfiguration(
+                  behavior: MyScrollBehavior(),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 7,
+                    itemBuilder: (context, index) {
+                      return IntrinsicHeight(
+                        child: InkWell(
+                          onTap: () => Get.to(() => const DetalheAbrigoPage()),
+                          child: CardAbrigo(
+                            endereco: 'R. Paes Leme, 6-40',
+                            horarioFuncionamento: 'Abre seg. às 09:00',
+                            isAberto: true,
+                            titulo: 'Associação Regional Flor de Liz',
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
             ],
@@ -100,14 +127,15 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 10),
-        child: DotNavigationBar(
+        child: DotNavigationBar(                    
           enablePaddingAnimation: false,
+          enableFloatingNavBar: true,
           margin: const EdgeInsets.only(left: 10, right: 10),
           currentIndex: _SelectedTab.values.indexOf(_selectedTab),
           dotIndicatorColor: Colors.white,
           selectedItemColor: Colors.black,
           backgroundColor: Colors.white,
-          unselectedItemColor: Colors.grey,
+          unselectedItemColor: Colors.grey,          
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
