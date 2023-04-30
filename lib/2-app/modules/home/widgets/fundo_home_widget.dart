@@ -1,39 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-
-import '../../../../1-base/behavior/my_scroll_behavior.dart';
-import '../../../shared/card_abrigo.dart';
 import '../../../shared/uteis/imagensAplicativo.dart';
-import '../../detalhe_abrigo/pages/detalhe_abrigo_page.dart';
 
 class FundoHomeWidget extends StatelessWidget {
-  final Widget conteudo;
+  final List<Widget> conteudo;
   const FundoHomeWidget({super.key, required this.conteudo});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      bottom: false,
       child: Container(
-        color: Colors.white,
+        color: const Color(0xffF7F7F7),
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Expanded(
+                children: [
+                  const Expanded(
                     child: Text(
                       "Petligit",
                       style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Icon(
-                    Icons.account_circle,
-                    size: 50,
-                    color: Color(0xffA5A5A5),
-                  ),
+                  // Icon(
+                  //   Icons.account_circle,
+                  //   size: 50,
+                  //   color: Color(0xfffaaf8e),
+                  // ),
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: const BoxDecoration(
+                      color: Color(0xfff7d8cb),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Image.asset(
+                        ImagensApp.user,
+                        height: 1,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -63,15 +73,15 @@ class FundoHomeWidget extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(30)),
                         ),
                         filled: true,
-                        fillColor: const Color(0xffF6F6F6),
+                        fillColor: Colors.white,
                       ),
                     ),
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 5),
                   Container(
                     height: 50,
                     width: 50,
-                    decoration: const BoxDecoration(color: Color(0xffF6F6F8), shape: BoxShape.circle),
+                    decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                     child: Padding(
                       padding: const EdgeInsets.all(15),
                       child: Image.asset(
@@ -83,7 +93,11 @@ class FundoHomeWidget extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(child: conteudo)
+            const SizedBox(height: 10),
+            Expanded(
+                child: Column(
+              children: conteudo,
+            ))
           ],
         ),
       ),

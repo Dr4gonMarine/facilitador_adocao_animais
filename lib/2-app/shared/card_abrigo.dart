@@ -24,15 +24,8 @@ class CardAbrigo extends StatelessWidget {
     return IntrinsicHeight(
       child: Container(
         padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 5,
-              spreadRadius: 1,
-            ),
-          ],
           color: Colors.white,
           borderRadius: BorderRadius.circular(25),
         ),
@@ -53,7 +46,7 @@ class CardAbrigo extends StatelessWidget {
                 children: [
                   TextWidget(
                     titulo,
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     maxLines: 2,
                   ),

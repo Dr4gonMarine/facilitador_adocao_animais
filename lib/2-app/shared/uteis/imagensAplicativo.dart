@@ -11,4 +11,9 @@ class ImagensApp {
   static const String imagemCard4 = "$_path/cardAbrigo4.png";
   static const String imagemCard5 = "$_path/cardAbrigo5.png";
   static const String iconePatinha = "$_path/Icon_Pata.png";
+  static const String user = "$_path/Icon feather-user.png";
+  static const String eventos = "$_path/Icon_Events.png";
+  static const String home = "$_path/Icon_Home.png";
+  static const String mensagens = "$_path/Icon_Messages.png";
+  static const String faq = "$_path/Icon_Faq.png";
 }
