@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TextWidget extends StatelessWidget {
   late String text;
@@ -28,7 +29,7 @@ class TextWidget extends StatelessWidget {
       maxLines: maxLines ?? 1,
       softWrap: false,
       overflow: TextOverflow.ellipsis,
-      style: TextStyle(
+      style: GoogleFonts.poppins(
           fontSize: fontSize ?? 14,
           color: color ?? Colors.black,
           fontWeight: fontWeight ?? FontWeight.normal),

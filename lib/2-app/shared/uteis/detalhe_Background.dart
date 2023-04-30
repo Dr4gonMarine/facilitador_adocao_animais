@@ -30,6 +30,41 @@ class DetalheBackground extends StatelessWidget {
             height: 25 * h,
             width: 100 * w,
           ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Container(
+                width: 100 * w,
+                margin: EdgeInsets.only(top: h * 22),
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(25),
+                        topRight: Radius.circular(25))),
+                child: Column(children: [
+                  SizedBox(
+                    height: 2 * h,
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                    width: 16 * w,
+                    height: 0.8 * h,
+                  ),
+                  SizedBox(
+                    height: 4 * h,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 4 * w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: children,
+                    ),
+                  )
+                ]),
+              ),
+            ),
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 4 * w, vertical: 3 * h),
             child: Row(
@@ -37,51 +72,30 @@ class DetalheBackground extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Get.back(),
-                  child: const Icon(
-                    Icons.arrow_back_ios_new_outlined,
-                    color: Colors.white,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.6),
+                        borderRadius: BorderRadius.circular(50)),
+                    padding: const EdgeInsets.all(8),
+                    child: const Icon(
+                      Icons.arrow_back_ios_new_outlined,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-                const Icon(
-                  Icons.share,
-                  color: Colors.white,
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.6),
+                      borderRadius: BorderRadius.circular(50)),
+                  padding: const EdgeInsets.all(8),
+                  child: const Icon(
+                    Icons.share,
+                    color: Colors.white,
+                  ),
                 )
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              width: 100 * w,
-              margin: EdgeInsets.only(top: h * 22),
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25),
-                      topRight: Radius.circular(25))),
-              child: Column(children: [
-                SizedBox(
-                  height: 2 * h,
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.all(Radius.circular(25))),
-                  width: 16 * w,
-                  height: 0.8 * h,
-                ),
-                SizedBox(
-                  height: 4 * h,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4 * w),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: children,
-                  ),
-                )
-              ]),
-            ),
-          )
         ],
       ),
     ));

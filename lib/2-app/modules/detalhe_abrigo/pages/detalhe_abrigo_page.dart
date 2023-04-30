@@ -5,6 +5,8 @@ import 'package:projeto/2-app/shared/uteis/coresAplicativo.dart';
 import 'package:projeto/2-app/shared/uteis/detalhe_Background.dart';
 import 'package:projeto/2-app/shared/uteis/textWidget.dart';
 
+import '../widgets/cards_pets.dart';
+
 class DetalheAbrigoPage extends StatelessWidget {
   const DetalheAbrigoPage({super.key});
 
@@ -155,6 +157,14 @@ class DetalheAbrigoPage extends StatelessWidget {
         ),
         SizedBox(
           height: 2 * h,
+        ),
+        CardPet(
+          nome: 'Bartolomel',
+          raca: 'Chiuaua',
+        ),
+        CardPet(
+          nome: 'Bartolomel',
+          raca: 'Chiuaua',
         ),
       ],
     );

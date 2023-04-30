@@ -3,28 +3,24 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../../../shared/uteis/imagensAplicativo.dart';
+import '../../../shared/uteis/coresAplicativo.dart';
 import '../../../shared/uteis/textWidget.dart';
 
 class CardPet extends StatelessWidget {
   late String nome;
   late String raca;
-  late bool isAberto;
-  late String horarioFuncionamento;
 
-  CardPet(
-      {super.key,
-      required this.nome,
-      required this.raca,
-      required this.isAberto,
-      required this.horarioFuncionamento});
+  CardPet({
+    super.key,
+    required this.nome,
+    required this.raca,
+  });
 
   @override
   Widget build(BuildContext context) {
-    var coresAplicativo;
     return IntrinsicHeight(
       child: Container(
-        padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 0),
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -50,7 +46,6 @@ class CardPet extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   TextWidget(
                     nome,
@@ -58,23 +53,13 @@ class CardPet extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     maxLines: 2,
                   ),
-                  const SizedBox(height: 5),
-                  TextWidget(raca),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 1),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TextWidget(
-                        isAberto ? "Aberto" : "Fechado",
-                        fontWeight: FontWeight.bold,
-                        color: isAberto
-                            ? coresAplicativo.aberto
-                            : coresAplicativo.fechado,
-                      ),
-                      const SizedBox(width: 10),
-                      TextWidget("Abre seg. às 09:00")
+                      TextWidget(raca),
                     ],
-                  )
+                  ),
+                  const SizedBox(height: 5),
                 ],
               ),
             )
