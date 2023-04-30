@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                             imageAsset: _imagens[index],
                             endereco: index % 2 == 0 ? 'Rua Paes Leme, 6-40' : "Av. Rodrigues Alves 7-15",
                             horarioFuncionamento: 'Abre seg. às 09:00',
-                            isAberto: true,
+                            isAberto: index % 2 == 0,
                             titulo: index % 2 == 0 ? "Associação Regional Flor de Liz" : "ONG Arca da Fé - Resgate Animal",
                           ),
                         ),
