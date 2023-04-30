@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:projeto/2-app/shared/uteis/coresAplicativo.dart';
 import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
 import 'package:projeto/2-app/shared/uteis/textWidget.dart';
 
 class CardAbrigo extends StatelessWidget {
-  late String titulo;
-  late String endereco;
-  late bool isAberto;
-  late String horarioFuncionamento;
+  final String titulo;
+  final String imageAsset;
+  final String endereco;
+  final bool isAberto;
+  final String horarioFuncionamento;
 
-  CardAbrigo(
+  const CardAbrigo(
       {super.key,
       required this.titulo,
       required this.endereco,
       required this.isAberto,
-      required this.horarioFuncionamento});
+    required this.horarioFuncionamento,
+    required this.imageAsset,
+  });
 
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
       child: Container(
         padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -39,12 +40,11 @@ class CardAbrigo extends StatelessWidget {
           children: [
             //Imagem
             Image.asset(
-              ImagensApp.iconePata,
+              imageAsset,
               height: 100,
-              color: Colors.red,
             ),
             const SizedBox(
-              width: 5,
+              width: 10,
             ),
             Expanded(
               child: Column(
@@ -61,15 +61,20 @@ class CardAbrigo extends StatelessWidget {
                   TextWidget(endereco),
                   const SizedBox(height: 5),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       TextWidget(
                         isAberto ? "Aberto" : "Fechado",
                         fontWeight: FontWeight.bold,
                         color: isAberto ? coresAplicativo.aberto : coresAplicativo.fechado,
                       ),
-                      const SizedBox(width: 10),
-                      TextWidget("Abre seg. às 09:00")
+                      const SizedBox(width: 5),
+                      TextWidget("•"),
+                      const SizedBox(width: 5),
+                      TextWidget(
+                        "Abre seg. às 09:00",
+                        fontWeight: FontWeight.w500,
+                      )
                     ],
                   )
                 ],

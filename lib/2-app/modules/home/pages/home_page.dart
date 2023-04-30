@@ -16,6 +16,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var _selectedTab = _SelectedTab.home;
+  final _imagens = const [
+    ImagensApp.imagemCard1,
+    ImagensApp.imagemCard2,
+    ImagensApp.imagemCard3,
+    ImagensApp.imagemCard4,
+    ImagensApp.imagemCard5,
+  ];
+
 
   void _handleIndexChanged(int i) {
     setState(() {
@@ -41,8 +49,7 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: Text(
                         "Petligit",
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ),
                     Icon(
@@ -54,8 +61,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Row(
                   children: [
                     Expanded(
@@ -70,18 +76,14 @@ class _HomePageState extends State<HomePage> {
                           ),
                           labelText: 'Pesquisar',
                           floatingLabelBehavior: FloatingLabelBehavior.never,
-                          labelStyle: const TextStyle(
-                              color: Color(0xff9F9F9F),
-                              fontWeight: FontWeight.w500),
+                          labelStyle: const TextStyle(color: Color(0xff9F9F9F), fontWeight: FontWeight.w500),
                           enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xffF6F6F6), width: 0.0),
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            borderSide: BorderSide(color: Color(0xffF6F6F6), width: 0.0),
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
                           ),
                           focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xffF6F6F6), width: 0.0),
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            borderSide: BorderSide(color: Color(0xffF6F6F6), width: 0.0),
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
                           ),
                           filled: true,
                           fillColor: const Color(0xffF6F6F6),
@@ -92,8 +94,7 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       height: 50,
                       width: 50,
-                      decoration: const BoxDecoration(
-                          color: Color(0xffF6F6F8), shape: BoxShape.circle),
+                      decoration: const BoxDecoration(color: Color(0xffF6F6F8), shape: BoxShape.circle),
                       child: Padding(
                         padding: const EdgeInsets.all(15),
                         child: Image.asset(
@@ -110,16 +111,17 @@ class _HomePageState extends State<HomePage> {
                   behavior: MyScrollBehavior(),
                   child: ListView.builder(
                     shrinkWrap: true,
-                    itemCount: 7,
+                    itemCount: 5,
                     itemBuilder: (context, index) {
                       return IntrinsicHeight(
                         child: InkWell(
                           onTap: () => Get.to(() => const DetalheAbrigoPage()),
                           child: CardAbrigo(
-                            endereco: 'R. Paes Leme, 6-40',
+                            imageAsset: _imagens[index],
+                            endereco: index % 2 == 0 ? 'Rua Paes Leme, 6-40' : "Av. Rodrigues Alves 7-15",
                             horarioFuncionamento: 'Abre seg. às 09:00',
                             isAberto: true,
-                            titulo: 'Associação Regional Flor de Liz',
+                            titulo: index % 2 == 0 ? "Associação Regional Flor de Liz" : "ONG Arca da Fé - Resgate Animal",
                           ),
                         ),
                       );
