@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
 import '../widgets/conteudo_tab_chats.dart';
 import '../widgets/conteudo_tab_home.dart';
+import '../widgets/fundo_home_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,8 +16,20 @@ class _HomePageState extends State<HomePage> {
   var indexTab = 0;
   final tabs = [
     const ConteudoTabHome(),
-    Container(color: Colors.green),
-    Container(color: Colors.red),
+    const Padding(
+      padding: EdgeInsets.only(top: 10),
+      child: FundoHomeWidget(
+        titulo: "Eventos",
+        conteudo: [],
+      ),
+    ),
+    const Padding(
+      padding: EdgeInsets.only(top: 10),
+      child: FundoHomeWidget(
+        titulo: "Perguntas Frequentes",
+        conteudo: [],
+      ),
+    ),
     const ConteudoTabChats(),
   ];
 
