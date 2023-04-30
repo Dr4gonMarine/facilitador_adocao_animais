@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/route_manager.dart';
 import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
 import 'package:projeto/2-app/shared/uteis/textWidget.dart';
 
@@ -30,15 +31,18 @@ class DetalheBackground extends StatelessWidget {
             width: 100 * w,
           ),
           Padding(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.symmetric(horizontal: 4 * w, vertical: 3 * h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Icon(
-                  Icons.arrow_back_ios_new_outlined,
-                  color: Colors.white,
+              children: [
+                InkWell(
+                  onTap: () => Get.back(),
+                  child: const Icon(
+                    Icons.arrow_back_ios_new_outlined,
+                    color: Colors.white,
+                  ),
                 ),
-                Icon(
+                const Icon(
                   Icons.share,
                   color: Colors.white,
                 )
@@ -59,7 +63,7 @@ class DetalheBackground extends StatelessWidget {
                   height: 2 * h,
                 ),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(25))),
                   width: 16 * w,
@@ -68,9 +72,12 @@ class DetalheBackground extends StatelessWidget {
                 SizedBox(
                   height: 4 * h,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: children,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4 * w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: children,
+                  ),
                 )
               ]),
             ),

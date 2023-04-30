@@ -2,7 +2,7 @@ import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:projeto/1-base/behavior/my_scroll_behavior.dart';
-import 'package:projeto/2-app/modules/detalhe_abrigo_page/pages/detalhe_abrigo_page.dart';
+import 'package:projeto/2-app/modules/detalhe_abrigo/pages/detalhe_abrigo_page.dart';
 import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
 
 import '../../../shared/card_abrigo.dart';
@@ -41,7 +41,8 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: Text(
                         "Petligit",
-                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ),
                     Icon(
@@ -53,7 +54,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Row(
                   children: [
                     Expanded(
@@ -68,13 +70,17 @@ class _HomePageState extends State<HomePage> {
                           ),
                           labelText: 'Pesquisar',
                           floatingLabelBehavior: FloatingLabelBehavior.never,
-                          labelStyle: const TextStyle(color: Color(0xff9F9F9F), fontWeight: FontWeight.w500),
+                          labelStyle: const TextStyle(
+                              color: Color(0xff9F9F9F),
+                              fontWeight: FontWeight.w500),
                           enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xffF6F6F6), width: 0.0),
+                            borderSide: BorderSide(
+                                color: Color(0xffF6F6F6), width: 0.0),
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
                           focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xffF6F6F6), width: 0.0),
+                            borderSide: BorderSide(
+                                color: Color(0xffF6F6F6), width: 0.0),
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
                           filled: true,
@@ -87,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                       height: 50,
                       width: 50,
                       decoration: const BoxDecoration(
-                        color: Color(0xffF6F6F8), shape: BoxShape.circle),
+                          color: Color(0xffF6F6F8), shape: BoxShape.circle),
                       child: Padding(
                         padding: const EdgeInsets.all(15),
                         child: Image.asset(
@@ -127,7 +133,7 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 10),
-        child: DotNavigationBar(                    
+        child: DotNavigationBar(
           enablePaddingAnimation: false,
           enableFloatingNavBar: true,
           margin: const EdgeInsets.only(left: 10, right: 10),
@@ -135,7 +141,7 @@ class _HomePageState extends State<HomePage> {
           dotIndicatorColor: Colors.white,
           selectedItemColor: Colors.black,
           backgroundColor: Colors.white,
-          unselectedItemColor: Colors.grey,          
+          unselectedItemColor: Colors.grey,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
