@@ -163,7 +163,7 @@ class DetalheAbrigoPage extends StatelessWidget {
           raca: 'Chiuaua',
         ),
         CardPet(
-          nome: 'Bartolomel',
+          nome: 'Bartolomeu',
           raca: 'Chiuaua',
         ),
       ],

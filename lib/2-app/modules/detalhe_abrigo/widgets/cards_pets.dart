@@ -20,7 +20,8 @@ class CardPet extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntrinsicHeight(
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 0),
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 0),
+        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -56,6 +57,13 @@ class CardPet extends StatelessWidget {
                   const SizedBox(height: 1),
                   Row(
                     children: [
+                      Image.asset(
+                        ImagensApp.iconePatinha,
+                        scale: 3,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
                       TextWidget(raca),
                     ],
                   ),

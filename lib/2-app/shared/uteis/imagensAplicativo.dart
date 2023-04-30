@@ -10,4 +10,5 @@ class ImagensApp {
   static const String imagemCard3 = "$_path/cardAbrigo3.png";
   static const String imagemCard4 = "$_path/cardAbrigo4.png";
   static const String imagemCard5 = "$_path/cardAbrigo5.png";
+  static const String iconePatinha = "$_path/Icon_Pata.png";
 }

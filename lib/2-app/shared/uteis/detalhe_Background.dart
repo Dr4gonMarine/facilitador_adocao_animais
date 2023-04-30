@@ -5,6 +5,8 @@ import 'package:get/route_manager.dart';
 import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
 import 'package:projeto/2-app/shared/uteis/textWidget.dart';
 
+import '../../../1-base/behavior/my_scroll_behavior.dart';
+
 class DetalheBackground extends StatelessWidget {
   List<Widget> children;
 
@@ -30,7 +32,8 @@ class DetalheBackground extends StatelessWidget {
             height: 25 * h,
             width: 100 * w,
           ),
-          Expanded(
+          ScrollConfiguration(
+            behavior: MyScrollBehavior(),
             child: SingleChildScrollView(
               child: Container(
                 width: 100 * w,
