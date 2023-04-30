@@ -9,11 +9,21 @@ import '../../../shared/uteis/textWidget.dart';
 class CardPet extends StatelessWidget {
   late String nome;
   late String raca;
+  late String porte;
+  late int idade;
+  late String sexo;
+  late String status;
+  late String imagem;
 
   CardPet({
     super.key,
     required this.nome,
     required this.raca,
+    required this.porte,
+    required this.idade,
+    required this.sexo,
+    required this.status,
+    required this.imagem,
   });
 
   @override
@@ -37,9 +47,8 @@ class CardPet extends StatelessWidget {
           children: [
             //Imagem
             Image.asset(
-              ImagensApp.iconePata,
-              height: 100,
-              color: Colors.red,
+              imagem,
+              height: 120,
             ),
             const SizedBox(
               width: 5,
@@ -67,7 +76,66 @@ class CardPet extends StatelessWidget {
                       TextWidget(raca),
                     ],
                   ),
-                  const SizedBox(height: 5),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                        child: TextWidget(
+                          "$porte porte",
+                          color: coresAplicativo.padraoApp,
+                        ),
+                        decoration: BoxDecoration(
+                            color: coresAplicativo.padraoApp.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(30)),
+                      ),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                        child: TextWidget(
+                          "$idade anos",
+                          color: coresAplicativo.padraoApp,
+                        ),
+                        decoration: BoxDecoration(
+                            color: coresAplicativo.padraoApp.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(30)),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 5),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                        child: TextWidget(
+                          sexo,
+                          color: sexo == "Macho"
+                              ? coresAplicativo.macho
+                              : coresAplicativo.femea,
+                        ),
+                        decoration: BoxDecoration(
+                            color: coresAplicativo.padraoApp.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(30)),
+                      ),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                        child: TextWidget(
+                          status,
+                          color: coresAplicativo.padraoApp,
+                        ),
+                        decoration: BoxDecoration(
+                            color: coresAplicativo.padraoApp.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(30)),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             )

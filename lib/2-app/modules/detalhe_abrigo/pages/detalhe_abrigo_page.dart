@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:projeto/2-app/shared/uteis/coresAplicativo.dart';
 import 'package:projeto/2-app/shared/uteis/detalhe_Background.dart';
+import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
 import 'package:projeto/2-app/shared/uteis/textWidget.dart';
 
 import '../widgets/cards_pets.dart';
@@ -23,52 +24,7 @@ class DetalheAbrigoPage extends StatelessWidget {
           fontSize: 20,
         ),
         SizedBox(
-          height: 1 * h,
-        ),
-        Row(
-          children: [
-            InkWell(
-                onTap: () {},
-                child: Icon(
-                  Icons.star,
-                  color: coresAplicativo.padraoApp,
-                )),
-            InkWell(
-                onTap: () {},
-                child: Icon(
-                  Icons.star,
-                  color: coresAplicativo.padraoApp,
-                )),
-            InkWell(
-                onTap: () {},
-                child: Icon(
-                  Icons.star,
-                  color: coresAplicativo.padraoApp,
-                )),
-            InkWell(
-                onTap: () {},
-                child: Icon(
-                  Icons.star,
-                  color: coresAplicativo.padraoApp,
-                )),
-            InkWell(
-                onTap: () {},
-                child: Icon(
-                  Icons.star,
-                  color: coresAplicativo.padraoApp,
-                )),
-            SizedBox(
-              width: 1 * w,
-            ),
-            TextWidget(
-              "5.0",
-              color: coresAplicativo.cinzaClaro,
-              fontSize: 18,
-            )
-          ],
-        ),
-        SizedBox(
-          height: 4 * h,
+          height: 3 * h,
         ),
         Row(children: [
           Icon(
@@ -161,11 +117,28 @@ class DetalheAbrigoPage extends StatelessWidget {
         CardPet(
           nome: 'Bartolomel',
           raca: 'Chiuaua',
+          idade: 2,
+          porte: 'Pequeno',
+          sexo: 'Macho',
+          status: 'Disponível',
+          imagem: ImagensApp.imagemCard1,
         ),
         CardPet(
-          nome: 'Bartolomeu',
-          raca: 'Chiuaua',
-        ),
+            nome: 'Gaia',
+            raca: 'Shih Tzu',
+            idade: 2,
+            porte: 'Pequeno',
+            sexo: 'Fêmea',
+            status: 'Reservado',
+            imagem: ImagensApp.imagemCard2),
+        CardPet(
+            nome: 'Princesa',
+            raca: 'Golden retriever',
+            idade: 2,
+            porte: 'Grande',
+            sexo: 'Femea',
+            status: 'Adotada',
+            imagem: ImagensApp.imagemCard3),
       ],
     );
   }
