@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:projeto/2-app/shared/uteis/coresAplicativo.dart';
+import 'package:projeto/2-app/shared/uteis/imagensAplicativo.dart';
 import 'package:projeto/2-app/shared/uteis/textWidget.dart';
 
 class CardAbrigo extends StatelessWidget {
@@ -22,11 +23,20 @@ class CardAbrigo extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(25)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 8,
+            spreadRadius: 1,
+          ),
+        ],
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(25),
+      ),
       child: Row(children: [
         //Imagem
         Image.asset(
-          "assets/icone_pata.png",
+          ImagensApp.background,
           height: 100,
           width: 100,
           color: Colors.red,

@@ -1,5 +1,6 @@
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:projeto/2-app/modules/detalhe_abrigo_page/pages/detalhe_abrigo_page.dart';
 
 import '../../../shared/card_abrigo.dart';
 
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-          color: Color(0xFFFAFAFA),
+          color: Colors.white,
           child: Column(
             children: [
               Row(
@@ -78,11 +79,20 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 20,
               ),
-              CardAbrigo(
-                endereco: 'R. Paes Leme, 6-40',
-                horarioFuncionamento: 'Abre seg. às 09:00',
-                isAberto: true,
-                titulo: 'Associação Regional Flor\n de Liz',
+              InkWell(
+                onTap: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DetalheAbrigoPage()),
+                  )
+                },
+                child: CardAbrigo(
+                  endereco: 'R. Paes Leme, 6-40',
+                  horarioFuncionamento: 'Abre seg. às 09:00',
+                  isAberto: true,
+                  titulo: 'Associação Regional Flor\n de Liz',
+                ),
               ),
             ],
           ),
